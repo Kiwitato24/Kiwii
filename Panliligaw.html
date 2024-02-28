@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panliligaw </title>
+<link rel = "icon" href = "https://emojiisland.com/cdn/shop/products/5_large.png?v=1571606116">
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #FFA700;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    h1 {
+        color: #FFA700;
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    .pet {
+        width: 100px;
+        height: 100px;
+        background-image: url('spongebob.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        margin: 0 auto 20px;
+        cursor: pointer;
+        transition: transform 0.3s;
+        animation: bounce 1s infinite alternate;
+    }
+
+    @keyframes bounce {
+        0% { transform: translateY(-5px); }
+        100% { transform: translateY(5px); }
+    }
+    .message {
+        display: none;
+        background-color: #FFA700;
+        color: #fff;
+        border-radius: 10px;
+        padding: 10px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        z-index: 1;
+    }
+    .exit-btn {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background-color: transparent;
+        color: #0065ab;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .exit-btn:hover {
+        color: #ff69b4;
+    }
+    button {
+        background-color: #ff69b4;
+        color: #fff;
+        font-size: 14px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    button:hover {
+        background-color: #FFFFFF;
+    }
+    .interactive {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .interactive img {
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    .interactive img:hover {
+        transform: scale(1.2);
+    }
+    .popup-image {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Good Morning, Ganda.</h1>
+    <p>Tapad ta sa tulog sunod para gwapo imo buntag HAHAHAHAH</p>
+    <b> Tap spanjibab, my baby kiwi </b>
+    <div class="pet" onclick="showMessage()"></div>
+    <div class="message" id="message">
+        <button class="exit-btn" onclick="hideMessage()">X</button>
+        <img src="Me4.png" alt="Cute Cat" style="width: 250px; height: 300px; margin-bottom: 10px;">
+        <h2>I am your lucky elf haha!</h2>
+        <b>I am here to bawi because I made you sad yesterday, tap those minions to read my (corny) banats for you hehe.</b>
+    </div>
+   <div class="interactive">
+    <img src="minion1.png" onclick="showPopupImage('Me1.png')">
+    <img src="minion2.png" onclick="showPopupImage('Me2.png')">
+    <img src="minions3.png" onclick="showPopupImage('Me3.png')">
+</div>
+<div class="popup-image" id="popupImage">
+    <img src="" alt="Minion Popup" style="max-width: 90%; max-height: 90%;">
+    <button class="exit-btn" onclick="hidePopupImage()">X</button>
+</div>
+
+</div>
+<script>
+    function showMessage() {
+        document.getElementById('message').style.display = 'block';
+    }
+    function hideMessage() {
+        document.getElementById('message').style.display = 'none';
+    }
+    function showPopupImage(imageSrc) {
+        var popupImage = document.getElementById('popupImage');
+        popupImage.children[0].src = imageSrc;
+        popupImage.style.display = 'block';
+    }
+    function hidePopupImage() {
+        document.getElementById('popupImage').style.display = 'none';
+    }
+</script>
+</body>
+</html>
